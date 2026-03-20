@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marksavg</title>
+</head>
+<body>
+    <script>
+        let marks=[90,90,92,80,70];
+        let sum=0;
+        let avg=0;
+        for(let x in marks){
+            sum+=marks[x];
+        }
+        avg=sum/marks.length;
+        if(avg>=85){
+            console.log("first");
+        }
+        else if(avg>=70 && avg<85){
+            console.log("second");
+        }
+        else if(avg>=55 && avg<70){
+            console.log("third");
+        }
+        else{
+            console.log("fail");
+        }
+    </script>
+</body>
+</html>

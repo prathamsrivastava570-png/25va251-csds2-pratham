@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>condition</title>
+</head>
+<body>
+    <script>
+        let myAge=20;
+        if(myAge>=18){
+            console.log("you are eligible to vote");
+        }
+        else{
+            console.log("you are not eligible to vote");
+        }
+        // switch... evaluates the expression and matches the value of the expression to a case label, and executes the associated block of code
+        let grade="A";
+        switch(grade){
+            case "A": result="first division ";
+                break;
+            case "B": result="second division";
+                break;
+            case "C": result="third division";
+                break;
+            default: result="fail";
+        }
+        console.log(result);
+        //if else if...else statement--- used to specify a new condition to test, if the first condition is false
+        let marks=65;
+        if(marks>=90){
+            console.log("first");
+        }
+        else if(marks>=70 && marks<90){
+            console.log("second");
+        }
+        else if(marks>=50 && marks<70){
+            console.log("third");
+        }
+        else{
+            console.log("fail");
+        }
+    </script>
+    
+</body>
+</html>

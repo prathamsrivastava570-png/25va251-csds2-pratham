@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function: a java scripts function a reusableblock of code designed to perform specififc task
+        function demo(){
+            console.log("hello world");
+        }
+        demo();
+        function demo(text){
+            console.log ("hello"+text);
+        }
+        demo(" JS");
+        function demo2(text){
+            console.log("hey"+text);
+        }
+        demo2(" there");
+        // function with default parameter
+        function add(a,b=10){
+            console.log("the sum of two numbers is: " + (a+b));
+
+        }
+        add(3);
+        //ANONYMOUS FUNCTION in java script that does not have an identiifrer and is not stored in a variable
+        let cal=function(){
+            var num1=5;
+            var num2=10;
+            var result=num1*num2;
+            console.log("the product of two numbers is: " + result);
+        }
+        cal();
+        //arrow function: a concise syntax for writing functions in java script
+        let div=(x,y)=> 
+        {
+            var num1=x;
+            var num2=y;
+            var res=x/y;
+            console.log("division is " + res);
+        }
+        div( 12,3);
+        //arrow function with a single line statement
+        let msg=()=>console.log(" hell abes");
+        msg();
+        //callback function is a function that is passed as an argument to another function .a callback funnction is intended to be executed later
+        function sub(callback){
+            var num1=a;
+            var num2=b;
+            var res=num1-num2;
+            //callback(res);
+        }
+        function displayRes(res){
+            console.log("result is"+res);
+        }
+        sub(displayRes);
+        //callback function using settimeout api
+        function msg1(){
+            console.log("hello friend");
+        }
+        setTimeout(msg1,2000);
+</script>
+    
+</body>
+</html>

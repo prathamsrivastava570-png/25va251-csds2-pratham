@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops in js</title>
+</head>
+<body>
+    <script>
+        let studentlist=["vikas","suresh","parth","santosh","pranjal"];
+        //for loop
+        for(let i=0;i<studentlist.length;i++){
+            console.log(studentlist[i]);
+        }
+        //while --- used whenn the number of iterationsis uncertain, and the loop should cntinue as long as a condition is true
+
+        let x=0;
+        while(x<studentlist.length){
+            console.log(studentlist[x]);
+            x++;
+        }
+        //for of loop--- used to iterate over iterable objects like arrays, strings, maps, sets, etc
+        for(let y of studentlist){
+            console.log(y);
+        }
+        let me={
+         name:"pratham" ,
+        age:20,
+        city: "varanasi",
+    };
+        for( i in me){
+            console.log(me[i]);
+        }
+    </script>
+    
+</body>
+</html>
