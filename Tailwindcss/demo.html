@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .box{
+            background-color: aqua;
+            height: 200px;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- main div -->
+     <div class="max-w-7xl mx-auto max-w-full bg-green-100 grid grid-cols-4 lg:grid-cols-4 sm:grid-cols-1 gap-4 p-1" style="height: 900px;" >
+        <div class="box bg-cyan-400">
+            <h1>box1</h1>
+            <p class="font-mono text-4xl italic font-medium ">Lorem ipsum, dolor sit amet  Illo, nostrum?
+            </p>
+        </div>
+        <div class="box bg-amber-50 ">
+            <h1>box2</h1>
+            <p class="font-mono text-4xl italic font-medium text-orange-500 line-through indent-8">Lorem ipsum, dolor sit amet  Illo, nostrum?
+            </p>
+        </div>
+        <div class="box bg-[url('./images/laptop.jpg')] bg-cover bg-center bg-no-repeat border-black border-8">
+            <h1>box3</h1>
+            <p class="font-mono text-4xl italic font-medium border-black border-[5px]">
+                Lorem ipsum, dolor sit amet Illo, nostrum?
+            </p>
+        </div>
+        <div class="box bg-yellow-100">
+            <h1>box4</h1>  
+            <p class="font-mono text-4xl italic font-medium shadow-lg shadow-cyan-500/50">Lorem ipsum, dolor sit amet  Illo, nostrum?
+            </p>
+        </div>
+     </div>
+  </body>
+</html>
