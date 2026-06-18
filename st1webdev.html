@@ -1,0 +1,23 @@
+<!Doctype html>
+<html lang=en>
+<head>
+<title>employee details</title>
+</head>
+<body>
+<h2>"employee salary details"</h2>
+<div id="output"></div>
+<script>
+let n=prompt("entet number of employees:");
+let result="";
+for(let i=0;i<n;i++){
+let name=prompt("enter name:");
+let salary=+prompt("enter salary:");
+if (salary>50000){ 
+result+=name+"-$"+salary+"<br>";
+}
+}
+document.getElementById("output").innerHTML=result;
+</script>
+</body>
+</html>
+

@@ -44,12 +44,12 @@
         }
         div( 12,3);
         //arrow function with a single line statement
-        let msg=()=>console.log(" hell abes");
+        let msg=()=>console.log(" hello abes");
         msg();
         //callback function is a function that is passed as an argument to another function .a callback funnction is intended to be executed later
         function sub(callback){
-            var num1=a;
-            var num2=b;
+            var num1=20;
+            var num2=10;
             var res=num1-num2;
             //callback(res);
         }
@@ -62,7 +62,81 @@
             console.log("hello friend");
         }
         setTimeout(msg1,2000);
-</script>
-    
+      // IIFE     ()()
+        (function(a, b){
+            console.log(`First Parameter ${a} and Second para ${b}`);
+            var re = a + b;
+            console.log(`Result is ${re}`);
+        })(4, 5);
+
+        //Sort code using arrow fn 
+        (msg=>console.log("Hello IIFE"))();
+        //promises:JavaScript promises are objects that represent the eventual completion (or failure) of an asynchronous
+        //  operation and its resulting value.
+        //  They offer a cleaner and more manageable way to handle asynchronous code compared to traditional callbacks,
+        //  helping to avoid "callback hell"
+        let promise=new Promise(function(resolve,reject){
+           let age= 25;
+              if(age>=18){
+                resolve("valid age");
+              }
+              else{
+                reject("wait for next year");
+              }
+            });
+            console.log(promise);
+           // promise.then(),catch();
+             promise
+            .then(msg=>console.log(msg))
+            .catch(error=>console.log(error));
+            //async  await: async and await are modern JavaScript keywords that allow developers to write asynchronous code in a synchronous-looking,
+            //  more readable style. They are essentially syntactical sugar built on top of Promises, 
+            // making complex asynchronous flows easier to manage than traditional .then() chaining or callbacks. 
+            //"https://dummyjson.com/products"
+             try{
+                async function userData(){    
+                //let response=await fetch('https://dummyjson.com/products');
+                // let response=await fetch('https://json
+                let response= await fetch("https://api.github.com/users/prathamsrivastava570-png");
+                let responseData=await response.json();
+                console.log(responseData);
+            }}
+             catch (error){
+                console.log(error);
+            }
+            //userData();
+            let myInfo={
+                name:"pratham",
+                age:20,
+                city:"ghaziabad",
+                phone:8953952203,
+                email:"pratham@example.com"
+            }
+            //convert object using stringnify
+            let myInfoStr=JSON.stringify(myInfo);
+            //set data
+            localStorage.setItem('preference',myInfo);
+            //retrieving and parsingthe object back
+            let getMyInfo = localStorage.getItem('preference');
+            //parse the object:parsinng: is the general process of analyzing a string of raw data or code and converting it into a structured
+            // , meaningful format that the program can use and manipulate.
+            const finalData=JSON.parse(getMyInfo);
+            console.log(finalData.name);
+
+            //higher order function: 
+            //map(),filter(),reduce(),forEach()
+                let num=[3,5,6,7,8,92,3,5,6,8,0];
+                //find the squqare of num
+                let result=num.map(n=n>n*n);
+                console.log(`square of num is ${result}`);
+                //find the number greater than 3
+                let result2=num.filter(n=>n>3);
+                console.log(`sorting of num array os ${result2}`);
+                //find the sum of the num array
+                let sum= sum.reduce((total,n)=>total+n ,0);
+                console.log(`the addition of sum of num array is ${sum}`);
+
+            
+   </script>
 </body>
 </html>

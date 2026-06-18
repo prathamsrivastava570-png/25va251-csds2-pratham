@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #e3e6e6;
+    }
+    header {
+      background-color: #131921;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #f08804;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .search-box {
+      flex: 1;
+      display: flex;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .search-box button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #febd69;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .cart {
+      margin-left: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    nav {
+      background-color: #232f3e;
+      padding: 10px 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .banner {
+  width: 100%;
+  height: 160px;
+  background-image: url("https://connect-assets.prosple.com/cdn/ff/3UVJ1GrRQln_OqzTdYq_8JbYmNY-pDZDNO4lW5M62Kg/1578558221/public/styles/scale_and_crop_center_890x320/public/2020-01/Banner-Amazon-893x321-2020.jpg?itok=Wn-QOqJ4")
+  background-size cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background-color: white;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .product p {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .product button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ffd814;
+      border: 1px solid #fcd200;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .product button:hover {
+      background-color: #f7ca00;
+    }
+    footer {
+      background-color: #131921;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+.footer-top {
+  background-color: #37475a;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.footer {
+  background-color: #232f3e;
+  color: #ffffff;
+  padding: 40px 80px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.footer-links h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: block;
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-language {
+  border-top: 1px solid #3a4553;
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.footer-bottom {
+  background-color: #131a22;
+  color: #cccccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">amazon</div>
+
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Search Amazon" />
+      <button onclick="searchProduct()">Search</button>
+    </div>
+
+    <div class="cart">🛒 Cart (<span id="cartCount">0</span>)</div>
+  </header>
+  <nav>
+    <a href="#">All</a>
+    <a href="#">Mobiles</a>
+    <a href="#">Electronics</a>
+    <a href="#">Fashion</a>
+    <a href="#">Home</a>
+    <a href="#">Deals</a>
+  </nav>
+  <div class="banner"></div>
+  <section class="products" id="productList">
+    <div class="product">
+        <img src="https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/article/Apple-iPhone-16-Pro-hero-geo-240909_inline.jpg.large.jpg" alt="Apple iphone"/>
+      <h3>Apple iphone</h3>
+      <p>₹1,24,999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="https://sell.gameloot.in/wp-content/uploads/sites/4/2024/04/Sony-WH-CH720N-Wireless-Noise-Cancelling-Headphone-Blue.jpg" alt="Sony headphones" />
+      <h3>Sony headphones</h3>
+      <p>₹2,999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="https://images.jdmagicbox.com/quickquotes/images_main/second-hand-apple-laptop-2222941756-q3g8s1h9.jpg" alt="macbook" />
+      <h3>Macbook</h3>
+      <p>₹94,999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Smart Watch" />
+      <h3>Smart Watch</h3>
+      <p>₹2,999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ7m8qzKGcFVQaCRhAqWQdhDpWQ8htDRKMPJVW0awi2bXWU9jpSSEY_ovM0vEO3NwuKZODqeqILC90WKfG_z83cS4VwcvkrKdF-62_lLcFwyU2ILqDO4A0o8-s" alt="Running Shoes"/>
+      <h3>Running Shoes</h3>
+      <p>₹2,999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS4J0Gb_nG4fRJDI2k-PGQ7pGGIv6b01PuOdW-jSDo8XepLBj8YjkfuGxpJpzoZQdrh36Len439IgaQeUkNHcmAdkXuIj8TkVXfQDADzpCHxpQiRHDso6xYsA" alt="backpack"/>
+      <h3>Backpack</h3>
+      <p>₹999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="https://www.mytrendyphone.eu/images/DC402-AF-4K-Kids-48MP-Digital-Camera-Auto-Focus-16X-Digital-Zoom-Vlogging-Camera-for-Teens-Light-PinkNone-25032024-00-p.webp" alt="Digital Camera" />
+      <h3>Digital Camera</h3>
+      <p>₹9,999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRN5ebXI0U37dxNKejYV5eGHjcyBSUXhT-kK-ozDkWFHVTZMGg6VOzcE6CsFrWyfaqvEbAcb9JVRtomqUgOpp47dTXh1Xt_" alt="DSLR camera" />
+        <h3>DSLR Camera</h3>
+      <p>₹45,999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2025/12/BEST-MECHANICAL-KEYBOARDS-2048px-EVOWORKS-80-926.jpg?auto=webp&quality=75&width=1024" alt="Mechanical Keyboard" />
+      <h3>Mechanical Keyboard</h3>
+      <p>₹3,999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1527814050087-3793815479db" alt="Wireless Mouse" />
+      <h3>Wireless Mouse</h3>
+      <p>₹799</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Tablet" />
+      <h3>Tablet</h3>
+      <p>₹18,499</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+  </section>
+  <footer>
+  </footer>
+
+<div class="footer-top">
+  Back to top
+</div>
+
+<footer class="footer">
+  <div class="footer-links">
+
+    <div>
+      <h4>Get to Know Us</h4>
+      <a href="#">About Amazon</a>
+      <a href="#">Careers</a>
+      <a href="#">Press Releases</a>
+      <a href="#">Amazon Science</a>
+    </div>
+
+    <div>
+      <h4>Connect with Us</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+
+    <div>
+      <h4>Make Money with Us</h4>
+      <a href="#">Sell on Amazon</a>
+      <a href="#">Become an Affiliate</a>
+      <a href="#">Advertise Your Products</a>
+      <a href="#">Amazon Pay</a>
+    </div>
+
+    <div>
+      <h4>Let Us Help You</h4>
+      <a href="#">Your Account</a>
+      <a href="#">Returns Centre</a>
+      <a href="#">Help</a>
+      <a href="#">Amazon App Download</a>
+    </div>
+
+  </div>
+
+  <div class="footer-language">
+    🌐 English &nbsp; | &nbsp; 🇮🇳 India
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 1996–2026, Amazon.com, Inc. or its affiliates
+</div>
+
+</body>
+</html>
